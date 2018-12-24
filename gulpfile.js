@@ -51,6 +51,8 @@ gulp.task("watch-assets", function (cb) {
 gulp.task("watch-electron-js", function (cb) {
     //监听对应代码变化 主线程代码, reload
     gulp.watch('./app/src/assets/**/*',gulp.series(['copy','reload']));
+    gulp.watch('./app/src/*.html',gulp.series(['copy','reload']));
+    gulp.watch('./app/src/*.js',gulp.series(['copy','reload']));
     console.log("监听主线程资源");
     cb()
 });
@@ -72,4 +74,4 @@ gulp.task("clean", function (cb) {
     cb();
     console.log("清除历史文件！");
 });
-gulp.task("default", gulp.series("clean","copy","webpack-react","watch","start"));
+gulp.task("default", gulp.series("clean","copy","webpack-react","start","watch"));

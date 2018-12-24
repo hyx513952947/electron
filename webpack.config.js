@@ -29,6 +29,19 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            limit: 8192,
+                            name: '[name].[ext]',
+                            publicPath:path.join(__dirname,"app/build/assets")
+                        }
+                    }
+                ]
             }
         ]
     }

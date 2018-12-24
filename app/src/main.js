@@ -5,7 +5,6 @@ const path = require('path');
 // let ws = require('./d/FileService');
 let mainWindow;
 
-const server = require('electron-connect').server;//开发模式时候才有，打包时候需要注释掉
 // ws(function (result) {
 //     mainWindow.webContents.send('asynchronous-reply',result)
 // })
@@ -23,7 +22,7 @@ function createWindow() {
         mainWindow = null
     });
     mainWindow.webContents.openDevTools();//开发模式时候才有，打包时候需要注释掉
-    server.create(mainWindow)//开发模式时候才有，打包时候需要注释掉
+    require('electron-connect').server.create(mainWindow)//开发模式时候才有，打包时候需要注释掉
 }
 
 app.on('ready', createWindow);
