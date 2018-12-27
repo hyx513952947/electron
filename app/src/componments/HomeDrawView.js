@@ -43,7 +43,7 @@ class SwipeableTemporaryDrawer extends React.Component {
         super(props);
         this.state={
             left: false,
-            center:this.props.menuList.items_commons[0]
+            center:this.props.menuList.items_commons[2]
         }
     }
 

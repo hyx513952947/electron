@@ -4,7 +4,7 @@
   "description": "",
   "main": "./app/build/main.js",
   "scripts": {
-    "start-electron": "electron . --debug",
+    "start-electron": "nodemon --watch app/build/**/* --exec electron .",
     "start-dev": "gulp",
     "start-react": "react-scripts start ./app/src/index.js",
     "webpack": "npx webpack --config webpack.config.js"
@@ -26,12 +26,14 @@
     "file-loader": "^2.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-webserver": "^0.9.1",
+    "nodemon": "^1.18.9",
     "url-loader": "^1.1.2"
   },
   "dependencies": {
     "@material-ui/core": "^3.7.0",
     "@material-ui/icons": "^3.0.1",
     "electron": "^3.0.13",
+    "ip": "^1.1.5",
     "loadsh": "0.0.3",
     "qr-image": "^3.2.0",
     "react": "^16.6.3",

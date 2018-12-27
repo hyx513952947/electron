@@ -106,7 +106,7 @@ class PrimarySearchAppBar extends React.Component {
     };
     handleLeftMenuOpen = event =>{
         this.props.toggleLeftMenu();
-    }
+    };
     handleMobileMenuClose = () => {
         this.setState({ mobileMoreAnchorEl: null });
     };
